@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA.M.2f24</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: #474747;
+    }
+    body {
+        font-family: Times New Roman, Arial;
+        color: #282520;
+		background-color: #FAF9F1; /* Imposta il colore di sfondo desiderato */
+    }
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background: #333;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transition: 0.5s;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #sidebar.active {
+        left: 0;
+    }
+
+    .sidebar-item, .sidebar-non-link-item {
+        padding: 16px;
+        color: white;
+        background: #333; /* Different background to distinguish */
+        text-align: center;
+        text-decoration: none; /* Remove underline from links */
+        display: block; /* Ensure full width for each item */
+    }
+
+    .sidebar-item small, .sidebar-non-link-item small {
+        display: block;
+        font-size: 0.8em; /* Smaller font size for second line */
+        color: #CCC; /* Lighter color for small text */
+    }
+
+    #main-content {
+        margin-left: 0;
+        transition: margin-left 0.5s;
+    }
+
+    .openbtn {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        font-size: 24px;
+        cursor: pointer;
+        background-color: #FAF9F1;
+        color: #000;
+        padding: 5px 10px;
+        border: none;
+        z-index: 3;
+        transition: left 0.5s;
+    }
+
+    .openbtn:hover {
+        background-color: #DDD;
+    }
+
+    .content {
+		/* max-width: 800px; */
+        margin: 0 auto;
+        padding: 20px;
+        transition: padding 0.5s;
+    }
+
+    h1, h2 {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-top: 20px;
+        color: #474747;
+    }
+
+    h2 {
+        font-size: 18px;
+        color: #474747;
+        margin-bottom: 20px;
+    }
+
+
+    .sidebar-sub-item {
+    display: inline; /* or 'block' if you want each on a new line */
+    color: white; /* or any other color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.sidebar-sub-item small {
+    font-size: 0.8em; /* Smaller font size */
+    color: #CCC; /* Lighter color for small text */
+}
+
+.sidebar-sub-item:hover {
+    text-decoration: underline; /* Optional: adds underline on hover */
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center; /* Assicurati che l'immagine sia centrata */
+    margin-top: 0; /* Opzionalmente riduci anche il margine superiore del contenitore dell'immagine */
+}
+
+
+
+.image-container img {
+    max-width: 90%; /* Adatta la percentuale in base alla dimensione desiderata dell'immagine */
+    max-height: 90vh; /* Imposta un'altezza massima in base all'altezza della finestra del browser */
+    display: block; /* Rimuove eventuali spazi aggiuntivi sotto l'immagine */
+    margin: 0 auto; /* Centra l'immagine se è più piccola del contenitore */
+} 
+
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block; /* Rimuove eventuali spazi aggiuntivi sotto l'immagine */
+    margin: 0 auto; /* Centra l'immagine se è più piccola del contenitore */
+}
+
+
+#page-content {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+            text-align: center; /* Centra il testo */
+        }
+
+</style>
+</head>
+<body> 
+
+<button class="openbtn" onclick="toggleSidebar()">}</button>
+
+<!--  <button class="openbtn" onclick="toggleSidebar()">☰</button> -->
+
+<div id="sidebar">
+    <div class="sidebar-item">
+       <a href="#" class="sidebar-item" onclick="loadPage('default'); return false;">Home</a>
+        <a href="presentazione.html" class="sidebar-item" onclick="loadPage('page1'); return false;">Presentazione</a>
+     <!--    <a href="roberto_fattore_presentazione.html" class="sidebar-sub-item" onclick="loadPage('subpage1'); return false;"> -->
+		<small>Prof. Roberto Fattore</small></a>
+        <a href="IAperlascuola.html" class="sidebar-item" onclick="loadPage('page2'); return false;">L'IA per la scuola</a>
+		<a href="#" class="sidebar-sub-item" onclick="loadPage('luisa_campedelli'); return false;"><small>Prof.ssa Luisa Campedelli</small></a>
+		<a href="#" class="sidebar-sub-item" onclick="loadPage('francesca_chiecchi'); return false;"><small>Prof.ssa Francesca Chiecchi</small></a>
+		<a href="#" class="sidebar-sub-item" onclick="loadPage('alessandro_conti'); return false;"><small>Prof. Alessandro Conti</small></a>
+		<a href="#" class="sidebar-sub-item" onclick="loadPage('anna_dalfini'); return false;"><small>Prof.ssa Anna Dalfini</small></a>
+		<a href="#" class="sidebar-sub-item" onclick="loadPage('monica_giacomi'); return false;"><small>Prof.ssa Monica Giacomi</small></a>
+		<a href="#" class="sidebar-sub-item" onclick="loadPage('carlos_palacios'); return false;"><small>Prof.Carlos Palacios</small></a>
+        <a href="#" class="sidebar-sub-item" onclick="loadPage('silvia_varriale'); return false;"><small>Prof.ssa Silvia Varriale</small></a>
+		<a href="#" class="sidebar-sub-item" onclick="loadPage('mara_zimol'); return false;"><small>Prof.ssa Mara Zimol</small></a>
+        <br>
+        <a href="cosaeia.html" class="sidebar-item" onclick="loadPage('page3'); return false;">Cos'è l'IA</a>
+        <!-- <a href="paolo.olivato.html" class="sidebar-sub-item"> --> <small>Prof. Paolo Olivato</small></a>
+        <br>
+        <a href="cosanoneia.html" class="sidebar-item" onclick="loadPage('page4'); return false;">Cosa non è l'IA</a>
+		<a href="#" class="sidebar-sub-item" onclick="loadPage('daniele_mainente'); return false;"><small>Prof. Daniele Mainente</small></a>
+        <a href="#" class="sidebar-sub-item" onclick="loadPage('andrea_prato'); return false;"><small>Prof. Andrea Prato</small></a>
+		<a href="#" class="sidebar-sub-item" onclick="loadPage('enrico_zanetti'); return false;"><small>Prof. Enrico Zanetti</small></a>
+        <br>
+        <a href="conclusioni.html" class="sidebar-item" onclick="loadPage('page5'); return false;">Conclusioni</a>
+        <!-- <a href="roberto_fattore_conclusioni.html" class="sidebar-sub-item"> --> <small>Prof. Roberto Fattore</small></a>
+        <br>
+    </div>
+</div>
+
+<div id="main-content">
+    <div class="content">
+       <!-- <h1>Liceo Statale Scipione Maffei, Verona, 2024</h1>
+       <h2>Formazione PNRR - L'intelligenza artificiale</h2> -->
+       <div id="page-content">
+    			<div class="image-container">
+        		<img src="primapagina.jpg" alt="Default Image" class="responsive-image">
+    			</div>
+	   </div>
+    </div>
+</div> 
+
+<script>
+// Codice JavaScript
+
+function loadPage(page) {
+    var content = document.getElementById('page-content');
+
+    // Gestione della pagina di default
+    if (page === 'default') {
+        content.innerHTML = '<div class="image-container"><img src="primapagina1.jpg" alt="Default Image"></div>';
+    }
+    else if (page === 'page1') {
+        content.innerHTML = `
+            <h1>Presentazione</h1>
+            <h2>Prof. Roberto Fattore</h2>
+            <p>Dirigente scolastico Liceo S. Maffei, Verona</p>
+            <!-- Altri contenuti HTML per Pagina 1 -->
+        `;
+    }
+    else if (page === 'page2') {
+        content.innerHTML = `
+            <h1>L'IA per la scuola</h1>
+            <p>Introduzione alla sezione. Elenco cliccabile dei lavori con relativi autori.</p>
+            <!-- Altri contenuti HTML per Pagina 2 -->
+        `;
+    }
+    else if (page === 'page3') {
+        content.innerHTML = `
+            <h1>Cos'è l'IA</h1>
+            <p>Prof. Paolo Olivato</p>
+            <!-- Altri contenuti HTML per Pagina 3 -->
+        `;
+    }
+    else if (page === 'page4') {
+        content.innerHTML = `
+            <h1>Cosa non è l'IA</h1>
+            <p>Introduzione alla sezione. Elenco cliccabile dei lavori con relativi autori.</p>
+            <!-- Altri contenuti HTML per Pagina 4 -->
+        `;
+    }
+    else if (page === 'page5') {
+        content.innerHTML = `
+            <h1>Conclusioni</h1>
+            <h2>Prof. Roberto Fattore</h2>
+            <p>Dirigente scolastico Liceo S. Maffei, Verona</p>
+            <!-- Altri contenuti HTML per Pagina 5 -->
+        `;
+    }
+
+    else if (page === 'monica_giacomi') {
+        content.innerHTML = `
+            <h1>Prof.ssa Monica Giacomi</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico -->
+        `;
+    }
+
+else if (page === 'mara_zimol') {
+        content.innerHTML = `
+            <h1>Prof.ssa Mara Zimol</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico -->
+        `;
+    }
+
+else if (page === 'silvia_varriale') {
+        content.innerHTML = `
+            <h1>Prof.ssa Silvia Varriale</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico -->
+        `;
+    }
+
+else if (page === 'luisa_campedelli') {
+        content.innerHTML = `
+            <h1>Prof.ssa Luisa Campedelli</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico -->
+        `;
+    }
+
+else if (page === 'anna_dalfini') {
+        content.innerHTML = `
+            <h1>Prof.ssa Anna Dalfini</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico -->
+        `;
+    }
+
+else if (page === 'francesca_chiecchi') {
+        content.innerHTML = `
+            <h1>Prof.ssa Francesca Chiecchi</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico  -->
+        `;
+    }
+
+else if (page === 'alessandro_conti') {
+        content.innerHTML = `
+            <h1>Prof. Alessandro Conti</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico  -->
+        `;
+    }
+
+else if (page === 'carlos_palacios') {
+        content.innerHTML = `
+            <h1>Prof. Carlos Palacios</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico  -->
+        `;
+    }
+
+else if (page === 'enrico_zanetti') {
+        content.innerHTML = `
+            <h1>Prof. Enrico Zanetti</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico  -->
+        `;
+    }
+
+else if (page === 'daniele_mainente') {
+        content.innerHTML = `
+            <h1>Prof. Daniele Mainente</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico -->
+        `;
+    }
+
+else if (page === 'andrea_prato') {
+        content.innerHTML = `
+            <h1>Prof. Andrea Prato</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico  -->
+        `;
+    }
+
+    // Gestione per pagine non trovate
+    else {
+        content.innerHTML = '<p>Pagina non trovata.</p>';
+    }
+}
+
+
+
+function toggleSidebar() {
+    var sidebar = document.getElementById("sidebar");
+    var mainContent = document.getElementById("main-content");
+    var openBtn = document.querySelector(".openbtn");
+    var isOpen = sidebar.classList.contains("active");
+    sidebar.classList.toggle("active");
+    mainContent.style.marginLeft = isOpen ? '0' : '250px';
+    openBtn.style.left = isOpen ? '0' : '250px';
+
+    console.log("Sidebar toggled. isOpen:", isOpen); // Debug
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadPage('default'); // Sostituisci 'default' con la pagina iniziale desiderata
+});
+
+// ... (altro codice JavaScript se necessario) ...
+
+</script>
+
+</body>
+</html>
+
