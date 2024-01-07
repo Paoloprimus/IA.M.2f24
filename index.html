@@ -205,14 +205,14 @@ p {
         <a href="presentazione.html" class="sidebar-item" onclick="loadPage('page1'); toggleSidebar(); return false;">Presentazione</a>
      <!--    <a href="roberto_fattore_presentazione.html" class="sidebar-sub-item" onclick="loadPage('subpage1'); return false;"> -->
 		<small>Prof. Roberto Fattore</small></a>
-        <a href="IAperlascuola.html" class="sidebar-item" onclick="loadPage('page2'); toggleSidebar(); return false;">L'IA per la scuola</a>
+        	<a href="IAperlascuola.html" class="sidebar-item" onclick="loadPage('page2'); toggleSidebar(); return false;">L'IA per la scuola</a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('luisa_campedelli'); toggleSidebar(); return false;"><small>Prof.ssa Luisa Campedelli</small></a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('francesca_chiecchi'); toggleSidebar(); return false;"><small>Prof.ssa Francesca Chiecchi</small></a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('alessandro_conti'); toggleSidebar(); return false;"><small>Prof. Alessandro Conti</small></a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('anna_dalfini'); toggleSidebar(); return false;"><small>Prof.ssa Anna Dalfini</small></a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('monica_giacomi'); toggleSidebar(); return false;"><small>Prof.ssa Monica Giacomi</small></a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('carlos_palacios'); toggleSidebar(); return false;"><small>Prof.Carlos Palacios</small></a>
-        <a href="#" class="sidebar-sub-item" onclick="loadPage('silvia_varriale'); toggleSidebar(); return false;"><small>Prof.ssa Silvia Varriale</small></a>
+        	<a href="#" class="sidebar-sub-item" onclick="loadPage('silvia_varriale'); toggleSidebar(); return false;"><small>Prof.ssa Silvia Varriale</small></a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('mara_zimol'); toggleSidebar(); return false;"><small>Prof.ssa Mara Zimol</small></a>
         <br>
         <a href="cosaeia.html" class="sidebar-item" onclick="loadPage('page3'); toggleSidebar(); return false;">Cos'è l'IA</a>
@@ -244,18 +244,15 @@ p {
 <script>
 // Codice JavaScript
 
-// var isDefaultContentAlreadyPresent = false; // Aggiungi questa linea all'inizio dello script
-
 function loadPage(page) {
-    var content = document.getElementById('page-content');
-    var defaultContent = document.getElementById('default-content');
+            var content = document.getElementById('page-content');
+            var defaultContent = document.getElementById('default-content');
 
-    if (page === 'default') {
-        content.innerHTML = '<div class="image-container"><img src="imgdefault.jpg" alt="Default Image" class="responsive-image"></div>';
-        defaultContent.style.display = 'block'; // Mostra il contenuto di default
-    } else {
-        defaultContent.style.display = 'none'; // Nascondi il contenuto di default
-
+        if (page === 'default') {
+            content.innerHTML = '<div class="image-container"><img src="imgdefault.jpg" alt="Default Image" class="responsive-image"></div>';
+            defaultContent.style.display = 'block'; // Assicura che il contenuto di default venga mostrato
+        } else {
+            defaultContent.style.display = 'none'; // Nasconde il contenuto di default per le altre pagine
         if (page === 'page1') {
             content.innerHTML = `<h1>Presentazione</h1><h2>Prof. Roberto Fattore</h2><p>Dirigente scolastico Liceo S. Maffei, Verona</p>`;
         } else if (page === 'page2') {
