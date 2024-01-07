@@ -205,14 +205,14 @@ p {
         <a href="presentazione.html" class="sidebar-item" onclick="loadPage('page1'); toggleSidebar(); return false;">Presentazione</a>
      <!--    <a href="roberto_fattore_presentazione.html" class="sidebar-sub-item" onclick="loadPage('subpage1'); return false;"> -->
 		<small>Prof. Roberto Fattore</small></a>
-        	<a href="IAperlascuola.html" class="sidebar-item" onclick="loadPage('page2'); toggleSidebar(); return false;">L'IA per la scuola</a>
+        <a href="IAperlascuola.html" class="sidebar-item" onclick="loadPage('page2'); toggleSidebar(); return false;">L'IA per la scuola</a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('luisa_campedelli'); toggleSidebar(); return false;"><small>Prof.ssa Luisa Campedelli</small></a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('francesca_chiecchi'); toggleSidebar(); return false;"><small>Prof.ssa Francesca Chiecchi</small></a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('alessandro_conti'); toggleSidebar(); return false;"><small>Prof. Alessandro Conti</small></a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('anna_dalfini'); toggleSidebar(); return false;"><small>Prof.ssa Anna Dalfini</small></a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('monica_giacomi'); toggleSidebar(); return false;"><small>Prof.ssa Monica Giacomi</small></a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('carlos_palacios'); toggleSidebar(); return false;"><small>Prof.Carlos Palacios</small></a>
-        	<a href="#" class="sidebar-sub-item" onclick="loadPage('silvia_varriale'); toggleSidebar(); return false;"><small>Prof.ssa Silvia Varriale</small></a>
+        <a href="#" class="sidebar-sub-item" onclick="loadPage('silvia_varriale'); toggleSidebar(); return false;"><small>Prof.ssa Silvia Varriale</small></a>
 		<a href="#" class="sidebar-sub-item" onclick="loadPage('mara_zimol'); toggleSidebar(); return false;"><small>Prof.ssa Mara Zimol</small></a>
         <br>
         <a href="cosaeia.html" class="sidebar-item" onclick="loadPage('page3'); toggleSidebar(); return false;">Cos'è l'IA</a>
@@ -245,52 +245,150 @@ p {
 // Codice JavaScript
 
 function loadPage(page) {
-            var content = document.getElementById('page-content');
-            var defaultContent = document.getElementById('default-content');
+    var content = document.getElementById('page-content');
+    var defaultContent = document.getElementById('default-content');
 
-        if (page === 'default') {
-            content.innerHTML = '<div class="image-container"><img src="imgdefault.jpg" alt="Default Image" class="responsive-image"></div>';
-            defaultContent.style.display = 'block'; // Assicura che il contenuto di default venga mostrato
-        } else {
-            defaultContent.style.display = 'none'; // Nasconde il contenuto di default per le altre pagine
-        if (page === 'page1') {
-            content.innerHTML = `<h1>Presentazione</h1><h2>Prof. Roberto Fattore</h2><p>Dirigente scolastico Liceo S. Maffei, Verona</p>`;
-        } else if (page === 'page2') {
-            content.innerHTML = `<h1>L'IA per la scuola</h1><p>Introduzione alla sezione. Elenco cliccabile dei lavori con relativi autori.</p>`;
-        } else if (page === 'page3') {
-            content.innerHTML = `<h1>Cos'è l'IA</h1><p>Prof. Paolo Olivato</p>`;
-        } else if (page === 'page4') {
-            content.innerHTML = `<h1>Cosa non è l'IA</h1><p>Introduzione alla sezione. Elenco cliccabile dei lavori con relativi autori.</p>`;
-        } else if (page === 'page5') {
-            content.innerHTML = `<h1>Conclusioni</h1><h2>Prof. Roberto Fattore</h2><p>Dirigente scolastico Liceo S. Maffei, Verona</p>`;
-        } else if (page === 'monica_giacomi') {
-            content.innerHTML = `<h1>Prof.ssa Monica Giacomi</h1><p>Contributo</p>`;
-        } else if (page === 'mara_zimol') {
-            content.innerHTML = `<h1>Prof.ssa Mara Zimol</h1><p>Contributo</p>`;
-        } else if (page === 'silvia_varriale') {
-            content.innerHTML = `<h1>Prof.ssa Silvia Varriale</h1><p>Contributo</p>`;
-        } else if (page === 'luisa_campedelli') {
-            content.innerHTML = `<h1>Prof.ssa Luisa Campedelli</h1><p>Contributo</p>`;
-        } else if (page === 'anna_dalfini') {
-            content.innerHTML = `<h1>Prof.ssa Anna Dalfini</h1><p>Contributo</p>`;
-        } else if (page === 'francesca_chiecchi') {
-            content.innerHTML = `<h1>Prof.ssa Francesca Chiecchi</h1><p>Contributo</p>`;
-        } else if (page === 'alessandro_conti') {
-            content.innerHTML = `<h1>Prof. Alessandro Conti</h1><p>Contributo</p>`;
-        } else if (page === 'carlos_palacios') {
-            content.innerHTML = `<h1>Prof. Carlos Palacios</h1><p>Contributo</p>`;
-        } else if (page === 'enrico_zanetti') {
-            content.innerHTML = `<h1>Prof. Enrico Zanetti</h1><p>Contributo</p>`;
-        } else if (page === 'daniele_mainente') {
-            content.innerHTML = `<h1>Prof. Daniele Mainente</h1><p>Contributo</p>`;
-        } else if (page === 'andrea_prato') {
-            content.innerHTML = `<h1>Prof. Andrea Prato</h1><p>Contributo</p>`;
-        } else {
-            content.innerHTML = '<p>Pagina non trovata.</p>'; // Gestione per pagine non trovate
-        }
+ // Gestione della pagina di default
+    if (page === 'default' && !isDefaultContentAlreadyPresent) {
+        content.innerHTML = '<div class="image-container"><img src="imgdefault.jpg" alt="Default Image" class="responsive-image"></div>';
+    }
+	
+    else if (page === 'page1') {
+        content.innerHTML = `
+            <h1>Presentazione</h1>
+            <h2>Prof. Roberto Fattore</h2>
+            <p>Dirigente scolastico Liceo S. Maffei, Verona</p>
+            <!-- Altri contenuti HTML per Pagina 1 -->
+        `;
+    }
+    
+       else if (page === 'page2') {
+        content.innerHTML = `
+            <h1>L'IA per la scuola</h1>
+            <p>Introduzione alla sezione. Elenco cliccabile dei lavori con relativi autori.</p>
+            <!-- Altri contenuti HTML per Pagina 2 -->
+        `;
+    }
+	    
+    else if (page === 'page3') {
+        content.innerHTML = `
+            <h1>Cos'è l'IA</h1>
+            <p>Prof. Paolo Olivato</p>
+            <!-- Altri contenuti HTML per Pagina 3 -->
+        `;
+    }
+    
+    else if (page === 'page4') {
+        content.innerHTML = `
+            <h1>Cosa non è l'IA</h1>
+            <p>Introduzione alla sezione. Elenco cliccabile dei lavori con relativi autori.</p>
+            <!-- Altri contenuti HTML per Pagina 4 -->
+        `;
+    }
+    
+    else if (page === 'page5') {
+        content.innerHTML = `
+            <h1>Conclusioni</h1>
+            <h2>Prof. Roberto Fattore</h2>
+            <p>Dirigente scolastico Liceo S. Maffei, Verona</p>
+            <!-- Altri contenuti HTML per Pagina 5 -->
+        `;
+    }
+
+    else if (page === 'monica_giacomi') {
+         // Nasconde il contenuto di default e mostra il contenuto per page2
+        defaultContent.style.display = 'none';content.innerHTML = `
+            <h1>Prof.ssa Monica Giacomi</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico -->
+        `;
+    }
+
+else if (page === 'mara_zimol') {
+        content.innerHTML = `
+	<h1>Prof.ssa Mara Zimol</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico -->
+        `;
+    }
+
+else if (page === 'silvia_varriale') {
+        content.innerHTML = `
+	<h1>Prof.ssa Silvia Varriale</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico -->
+        `;
+    }
+
+else if (page === 'luisa_campedelli') {
+        content.innerHTML = `
+	<h1>Prof.ssa Luisa Campedelli</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico -->
+        `;
+    }
+
+else if (page === 'anna_dalfini') {
+        content.innerHTML = `
+	<h1>Prof.ssa Anna Dalfini</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico -->
+        `;
+    }
+
+else if (page === 'francesca_chiecchi') {
+        content.innerHTML = `
+	<h1>Prof.ssa Francesca Chiecchi</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico  -->
+        `;
+    }
+
+else if (page === 'alessandro_conti') {
+        content.innerHTML = `
+	<h1>Prof. Alessandro Conti</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico  -->
+        `;
+    }
+
+else if (page === 'carlos_palacios') {
+        content.innerHTML = `
+	<h1>Prof. Carlos Palacios</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico  -->
+        `;
+    }
+
+else if (page === 'enrico_zanetti') {
+        content.innerHTML = `
+	<h1>Prof. Enrico Zanetti</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico  -->
+        `;
+    }
+
+else if (page === 'daniele_mainente') {
+        content.innerHTML = `
+	<h1>Prof. Daniele Mainente</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico -->
+        `;
+    }
+
+else if (page === 'andrea_prato') {
+        content.innerHTML = `
+	<h1>Prof. Andrea Prato</h1>
+            <p>Contributo</p>
+            <!-- Contenuto specifico  -->
+        `;
+    }
+
+    // Gestione per pagine non trovate
+    else {
+        content.innerHTML = '<p>Pagina non trovata.</p>';
     }
 }
-
 
 function toggleSidebar() {
     var sidebar = document.getElementById("sidebar");
@@ -331,4 +429,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
-
