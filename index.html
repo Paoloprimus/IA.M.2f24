@@ -193,8 +193,7 @@ p {
 	
 </style>
 </head>
-<body> 
-
+<body>
     <button class="openbtn" onclick="toggleSidebar()">☰</button>
 
     <div id="sidebar">
@@ -242,8 +241,8 @@ p {
             var defaultContent = document.getElementById('default-content');
 
             if (page === 'default') {
-                content.innerHTML = '<div class="image-container"><img src="imgdefault.jpg" alt="Default Image" class="responsive-image"></div>';
                 defaultContent.style.display = 'block';
+                content.innerHTML = ''; // Pulisci il contenuto precedente
             } else {
                 defaultContent.style.display = 'none';
 
