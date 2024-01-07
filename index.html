@@ -51,7 +51,7 @@
     }
 
     #main-content {
-        margin-left: 0;
+        /* margin-left: 0; */
         transition: margin-left 0.5s;
     }
 
@@ -362,7 +362,7 @@ function toggleSidebar() {
     var openBtn = document.querySelector(".openbtn");
     var isOpen = sidebar.classList.contains("active");
     sidebar.classList.toggle("active");
-    mainContent.style.marginLeft = isOpen ? '0' : '250px';
+//  mainContent.style.marginLeft = isOpen ? '0' : '250px';
     openBtn.style.left = isOpen ? '0' : '250px';
 
     console.log("Sidebar toggled. isOpen:", isOpen); // Debug
