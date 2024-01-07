@@ -193,15 +193,15 @@ p {
 	
 </style>
 </head>
-<body>
+
+	<body> 
     <button class="openbtn" onclick="toggleSidebar()">☰</button>
 
     <div id="sidebar">
         <div class="sidebar-item">
             <a href="#" class="sidebar-item" onclick="loadPage('default'); toggleSidebar(); return false;">Home</a>
-            <a href="presentazione.html" class="sidebar-item" onclick="loadPage('page1'); toggleSidebar(); return false;">Presentazione</a>
-            <small>Prof. Roberto Fattore</small>
-            <a href="IAperlascuola.html" class="sidebar-item" onclick="loadPage('page2'); toggleSidebar(); return false;">L'IA per la scuola</a>
+            <a href="#" class="sidebar-item" onclick="loadPage('page1'); toggleSidebar(); return false;">Presentazione</a>
+            <a href="#" class="sidebar-item" onclick="loadPage('page2'); toggleSidebar(); return false;">L'IA per la scuola</a>
             <a href="#" class="sidebar-sub-item" onclick="loadPage('luisa_campedelli'); toggleSidebar(); return false;"><small>Prof.ssa Luisa Campedelli</small></a>
             <a href="#" class="sidebar-sub-item" onclick="loadPage('francesca_chiecchi'); toggleSidebar(); return false;"><small>Prof.ssa Francesca Chiecchi</small></a>
             <a href="#" class="sidebar-sub-item" onclick="loadPage('alessandro_conti'); toggleSidebar(); return false;"><small>Prof. Alessandro Conti</small></a>
@@ -211,20 +211,22 @@ p {
             <a href="#" class="sidebar-sub-item" onclick="loadPage('silvia_varriale'); toggleSidebar(); return false;"><small>Prof.ssa Silvia Varriale</small></a>
             <a href="#" class="sidebar-sub-item" onclick="loadPage('mara_zimol'); toggleSidebar(); return false;"><small>Prof.ssa Mara Zimol</small></a>
             <br>
-            <a href="cosaeia.html" class="sidebar-item" onclick="loadPage('page3'); toggleSidebar(); return false;">Cos'è l'IA</a>
-            <small>Prof. Paolo Olivato</small>
-            <br>
-            <a href="cosanoneia.html" class="sidebar-item" onclick="loadPage('page4'); toggleSidebar(); return false;">Cosa non è l'IA</a>
+            <a href="#" class="sidebar-item" onclick="loadPage('page3'); toggleSidebar(); return false;">Cos'è l'IA</a>
+	    <small>Prof. Paolo Olivato</small>
             <a href="#" class="sidebar-sub-item" onclick="loadPage('daniele_mainente'); toggleSidebar(); return false;"><small>Prof. Daniele Mainente</small></a>
             <a href="#" class="sidebar-sub-item" onclick="loadPage('andrea_prato'); toggleSidebar(); return false;"><small>Prof. Andrea Prato</small></a>
             <a href="#" class="sidebar-sub-item" onclick="loadPage('enrico_zanetti'); toggleSidebar(); return false;"><small>Prof. Enrico Zanetti</small></a>
             <br>
-            <a href="conclusioni.html" class="sidebar-item" onclick="loadPage('page5'); toggleSidebar(); return false;">Conclusioni</a>
+            <a href="#" class="sidebar-item" onclick="loadPage('page5'); toggleSidebar(); return false;">Conclusioni</a>
             <small>Prof. Roberto Fattore</small>
             <br>
         </div>
     </div>
-
+	
+	
+	
+	
+	
     <div id="main-content">
         <div class="content">
             <div id="page-content">
@@ -235,17 +237,16 @@ p {
         </div>
     </div> 
 
+
     <script>
-        function loadPage(page) {
+            function loadPage(page) {
             var content = document.getElementById('page-content');
             var defaultContent = document.getElementById('default-content');
 
             if (page === 'default') {
-                defaultContent.style.display = 'block';
-                content.innerHTML = ''; // Pulisci il contenuto precedente
+                content.innerHTML = '<div class="image-container"><img src="imgdefault.jpg" alt="Default Image" class="responsive-image"></div>';
             } else {
-                defaultContent.style.display = 'none';
-
+                content.innerHTML = '';
                 // Qui gestisci il caricamento delle altre pagine
                 if (page === 'page1') {
                     content.innerHTML = `<h1>Presentazione</h1><h2>Prof. Roberto Fattore</h2><p>Dirigente scolastico Liceo S. Maffei, Verona</p>`;
