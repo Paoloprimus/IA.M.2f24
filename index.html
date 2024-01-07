@@ -170,35 +170,27 @@ p {
         }
 
 	
+/* Media query per schermi di dimensioni medie (es. tablet) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .responsive-image {
+        width: 70%; /* Dimensione maggiore per i tablet */
+    }
+}
+
 /* Media query per schermi più grandi (es. desktop) */
 @media screen and (min-width: 768px) {
     .responsive-image {
         max-width: 50%; /* Riduci la larghezza massima dell'immagine al 50% per schermi più grandi */
-        /* Puoi modificare questa percentuale in base alle tue esigenze */
     }
 }
 
-	/* Media query per schermi molto grandi (opzionale) */
+/* (Opzionale) Media query per schermi molto grandi */
 @media screen and (min-width: 1200px) {
     .responsive-image {
-        max-width: 50%; /* Ulteriore riduzione per schermi molto grandi */
-        /* Adatta questa percentuale alle tue esigenze */
+        max-width: 40%; /* Riduci ulteriormente la larghezza massima dell'immagine per schermi molto grandi */
     }
 }
 	
-/* Media query per schermi piccoli (es. smartphone) */
-@media screen and (max-width: 768px) {
-    .responsive-image {
-        width: 70%; /* Dimensione maggiore per gli smartphone */
-    }
-}
-
-/* Media query per schermi molto piccoli */
-@media screen and (max-width: 480px) {
-    .responsive-image {
-        width: 100%; /* Utilizza tutta la larghezza disponibile per schermi molto piccoli */
-    }
-}
 </style>
 </head>
 <body> 
