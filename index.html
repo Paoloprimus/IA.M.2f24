@@ -418,6 +418,15 @@ document.addEventListener('DOMContentLoaded', function() {
 // });
 // ... (altro codice JavaScript se necessario) ...
 
+	document.addEventListener('DOMContentLoaded', function() {
+    var openBtn = document.querySelector('.openbtn');
+
+    // Forza il ricalcolo degli stili
+    setTimeout(function() {
+        openBtn.style.left = openBtn.offsetLeft + 'px';
+    }, 1);
+});
+
 </script>
 
 </body>
