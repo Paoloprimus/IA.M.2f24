@@ -114,23 +114,44 @@
 }
 
 
-.image-container {
+/* .image-container {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+/*    align-items: center; /* Centra verticalmente */
+/*    text-align: center; /* Assicurati che l'immagine sia centrata */
+/*    margin-top: 0; /* Opzionalmente riduci anche il margine superiore del contenitore dell'immagine */
+/* }
+
+/* .image-container img {
+    /* max-width: 90%; /* Adatta la percentuale in base alla dimensione desiderata dell'immagine */
+    /* max-height: 90vh; /* Imposta un'altezza massima in base all'altezza della finestra del browser */
+ /*   width: 100%;
+    height: auto;
+    display: block; /* Rimuove eventuali spazi aggiuntivi sotto l'immagine */
+ /*   margin: 0 auto; /* Centra l'immagine se è più piccola del contenitore */
+} 
+
+/* .responsive-image {
+    max-width: 100%; /* Assicura che l'immagine non sia più grande del suo contenitore */
+/*    height: auto; /* Mantiene l'aspetto proporzionale dell'immagine */
+/*    display: block; /* Rimuove eventuali spazi aggiuntivi sotto l'immagine */
+/*    margin: 0 auto; /* Centra l'immagine se è più piccola del contenitore */
+/*} */
+
+
+	.image-container {
     display: flex;
     justify-content: center; /* Centra orizzontalmente */
     align-items: center; /* Centra verticalmente */
     text-align: center; /* Assicurati che l'immagine sia centrata */
-    margin-top: 0; /* Opzionalmente riduci anche il margine superiore del contenitore dell'immagine */
 }
 
 .image-container img {
-    /* max-width: 90%; /* Adatta la percentuale in base alla dimensione desiderata dell'immagine */
-    /* max-height: 90vh; /* Imposta un'altezza massima in base all'altezza della finestra del browser */
-    width: 100%;
-    height: auto;
+    width: 100%; /* Imposta la larghezza dell'immagine al 100% del contenitore */
+    height: auto; /* Mantiene l'aspetto proporzionale dell'immagine */
     display: block; /* Rimuove eventuali spazi aggiuntivi sotto l'immagine */
     margin: 0 auto; /* Centra l'immagine se è più piccola del contenitore */
-} 
-
+}
 
 .responsive-image {
     width: 50%;
@@ -138,8 +159,7 @@
     display: block; /* Rimuove eventuali spazi aggiuntivi sotto l'immagine */
     margin: 0 auto; /* Centra l'immagine se è più piccola del contenitore */
 }
-
-
+	
 #page-content {
     padding: 0;
     margin: 0;
@@ -372,14 +392,14 @@ document.addEventListener('DOMContentLoaded', function() {
     loadPage('default'); // Sostituisci 'default' con la pagina iniziale desiderata
 });
 
-	document.addEventListener('DOMContentLoaded', function() {
-    var img = document.querySelector('.responsive-image');
-    if (window.innerWidth <= 767) { // Se il dispositivo è un telefono
-        img.style.width = '90%';  // Aumenta la larghezza per i telefoni
-    } else {
-        img.style.width = '50%';  // Dimensione standard per PC e tablet
-    }
-});
+//	document.addEventListener('DOMContentLoaded', function() {
+//    var img = document.querySelector('.responsive-image');
+//    if (window.innerWidth <= 767) { // Se il dispositivo è un telefono
+//        img.style.width = '90%';  // Aumenta la larghezza per i telefoni
+//    } else {
+//        img.style.width = '50%';  // Dimensione standard per PC e tablet
+ //   }
+// });
 // ... (altro codice JavaScript se necessario) ...
 
 </script>
