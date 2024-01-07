@@ -154,8 +154,8 @@
 }
 
 .responsive-image {
-    width: 50%;
-    height: auto;
+    width: 100%; /* Imposta la larghezza dell'immagine al 100% del contenitore */
+    height: auto; /* Mantiene l'aspetto proporzionale dell'immagine */
     display: block; /* Rimuove eventuali spazi aggiuntivi sotto l'immagine */
     margin: 0 auto; /* Centra l'immagine se è più piccola del contenitore */
 }
@@ -170,18 +170,35 @@ p {
         }
 
 	
+/* Media query per schermi più grandi (es. desktop) */
+@media screen and (min-width: 768px) {
+    .responsive-image {
+        max-width: 50%; /* Riduci la larghezza massima dell'immagine al 50% per schermi più grandi */
+        /* Puoi modificare questa percentuale in base alle tue esigenze */
+    }
+}
+
+	/* Media query per schermi molto grandi (opzionale) */
 @media screen and (min-width: 1200px) {
     .responsive-image {
-        max-width: 60%; /* o una percentuale che si adatta bene ai dispositivi più grandi */
+        max-width: 50%; /* Ulteriore riduzione per schermi molto grandi */
+        /* Adatta questa percentuale alle tue esigenze */
     }
 }
-
-@media screen and (max-width: 767px) {
+	
+/* Media query per schermi piccoli (es. smartphone) */
+@media screen and (max-width: 768px) {
     .responsive-image {
-        max-width: 90%; /* più adatta per schermi più piccoli come gli smartphone */
+        width: 70%; /* Dimensione maggiore per gli smartphone */
     }
 }
 
+/* Media query per schermi molto piccoli */
+@media screen and (max-width: 480px) {
+    .responsive-image {
+        width: 100%; /* Utilizza tutta la larghezza disponibile per schermi molto piccoli */
+    }
+}
 </style>
 </head>
 <body> 
