@@ -372,6 +372,14 @@ document.addEventListener('DOMContentLoaded', function() {
     loadPage('default'); // Sostituisci 'default' con la pagina iniziale desiderata
 });
 
+	document.addEventListener('DOMContentLoaded', function() {
+    var img = document.querySelector('.responsive-image');
+    if (window.innerWidth <= 767) { // Se il dispositivo è un telefono
+        img.style.width = '90%';  // Aumenta la larghezza per i telefoni
+    } else {
+        img.style.width = '50%';  // Dimensione standard per PC e tablet
+    }
+});
 // ... (altro codice JavaScript se necessario) ...
 
 </script>
