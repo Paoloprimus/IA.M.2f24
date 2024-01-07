@@ -122,12 +122,21 @@
     margin-top: 0; /* Opzionalmente riduci anche il margine superiore del contenitore dell'immagine */
 }
 
-.image-container img {
-    max-width: 90%; /* Adatta la percentuale in base alla dimensione desiderata dell'immagine */
-    max-height: 90vh; /* Imposta un'altezza massima in base all'altezza della finestra del browser */
-    display: block; /* Rimuove eventuali spazi aggiuntivi sotto l'immagine */
-    margin: 0 auto; /* Centra l'immagine se è più piccola del contenitore */
+.image-container img, .responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
+
+	
+/* .image-container img {
+    max-width: 90%; /* Adatta la percentuale in base alla dimensione desiderata dell'immagine */
+/*    max-height: 90vh; /* Imposta un'altezza massima in base all'altezza della finestra del browser */
+/*    display: block; /* Rimuove eventuali spazi aggiuntivi sotto l'immagine */
+/*    margin: 0 auto; /* Centra l'immagine se è più piccola del contenitore */
+/*} */
+
 
 
 .responsive-image {
