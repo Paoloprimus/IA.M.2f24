@@ -244,24 +244,18 @@ p {
 <script>
 // Codice JavaScript
 
-var isDefaultContentAlreadyPresent = false; // Aggiungi questa linea all'inizio dello script
+// var isDefaultContentAlreadyPresent = false; // Aggiungi questa linea all'inizio dello script
 
 function loadPage(page) {
     var content = document.getElementById('page-content');
     var defaultContent = document.getElementById('default-content');
 
     if (page === 'default') {
-        if (!isDefaultContentAlreadyPresent) {
-            content.innerHTML = '<div class="image-container"><img src="imgdefault.jpg" alt="Default Image" class="responsive-image"></div>';
-            isDefaultContentAlreadyPresent = true;
-        }
+        content.innerHTML = '<div class="image-container"><img src="imgdefault.jpg" alt="Default Image" class="responsive-image"></div>';
         defaultContent.style.display = 'block'; // Mostra il contenuto di default
     } else {
-        // Per tutte le altre pagine
-        isDefaultContentAlreadyPresent = false;
         defaultContent.style.display = 'none'; // Nascondi il contenuto di default
 
-        // Qui gestisci tutte le pagine
         if (page === 'page1') {
             content.innerHTML = `<h1>Presentazione</h1><h2>Prof. Roberto Fattore</h2><p>Dirigente scolastico Liceo S. Maffei, Verona</p>`;
         } else if (page === 'page2') {
@@ -295,7 +289,7 @@ function loadPage(page) {
         } else if (page === 'andrea_prato') {
             content.innerHTML = `<h1>Prof. Andrea Prato</h1><p>Contributo</p>`;
         } else {
-            content.innerHTML = '<p>Pagina non trovata.</p>';
+            content.innerHTML = '<p>Pagina non trovata.</p>'; // Gestione per pagine non trovate
         }
     }
 }
